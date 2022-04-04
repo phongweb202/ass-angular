@@ -1,0 +1,54 @@
+<div class="tw-bg-white tw-shadow-2xl mt-4 tw-mx-2 tw-mb-24">
+    <h3 class="alert alert-success">{{content}}</h3>
+    <div class="tw-mx-3 tw-p-5">
+        <form [formGroup]="formProduct" (submit)="onSubmit(formProduct.value)">
+            <div class="mb-3">
+                <label class="form-label">Name</label>
+                <input type="text" class="form-control" formControlName="name" [value]="product && product.name">
+                <app-show-validate [form]="formProduct.get('name')" key="Tên sản phẩm"></app-show-validate>
+            </div>
+            <div class="mb-3">
+                <label class="form-label">Price</label>
+                <input type="number" class="form-control" formControlName="price"
+                [value]="product && product.price">
+                <app-show-validate [form]="formProduct.get('price')" key="Giá sản phẩm"></app-show-validate>
+            </div>
+            <div class="mb-3">
+                <label class="form-label">Image</label>
+                <img [src]="product &&  product.img" alt="" class="tw-w-24 mb-2">
+                <input type="file" class="form-control" formControlName="img" (change)="onFileChanged($event)">
+            </div>
+            <div class="mb-3">
+                <label class="form-label">Status</label>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" value="0" formControlName="status"
+                        [checked]="product && product.status == 0"> 
+                    <label class="form-check-label" for="flexRadioDefault1">
+                        Hiển thị
+                    </label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" value="1" formControlName="status"
+                        [checked]="product && product.status == 1">
+                    <label class="form-check-label" for="flexRadioDefault2">
+                        Ẩn
+                    </label>
+                </div>
+                <app-show-validate [form]="formProduct.get('status')" key="Trạng thái sản phẩm"></app-show-validate>
+            </div>
+            <div class="mb-3">
+                <label class="form-label">Decription</label>
+                <textarea class="form-control" formControlName="desc" [value]="product && product.desc"  rows="3"
+                ></textarea>
+            </div>
+            <button type="submit" 
+                class="tw-bg-blue-600 tw-text-white outline-none btn hover:tw-bg-blue-800 hover:tw-text-white" [disabled]="formProduct.invalid">Submit</button>
+            
+            <button class="btn btn-warning ms-1" (click)="cancel()" >
+                Cancel
+            </button>
+        </form>
+    </div>
+
+
+</div>

@@ -1,0 +1,423 @@
+<div id="content">
+    <div class="col-12 tw-shadow-xl tw-py-2 tw-bg-white">
+        <div class="row">
+            <div class="col-8 m-auto ">
+                <ul class="tw-flex">
+                    <li>
+                        <a routerLink="" class="tw-block text-lg tw-px-3"><i
+                                class="fa-solid fa-house text-danger me-2"></i>Trang
+                            chủ <span class="tw-font-bold ms-2"><i class="fa-solid fa-angle-right"></i></span></a>
+
+                    </li>
+                    <li>
+                        <a routerLink="/phones" class="tw-block text-lg tw-px-3">Điện thoại <span
+                                class="tw-font-bold ms-2"><i class="fa-solid fa-angle-right"></i></span></a>
+
+                    </li>
+                    <li>
+                        <a href="" class="tw-block text-lg tw-px-3">{{product && product.name}}</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div class="col-12 mt-3 tw-shadow-lg">
+        <div class="col-8 m-auto">
+            <div class="row">
+                <div class="col-12">
+                    <h2 class="p-3 tw-font-bold fs-2 tw-font-bold">{{product && product.name}}</h2>
+                </div>
+                <div class="col-4 ">
+                    <div class="tw-bg-rose-300 p-2 tw-rounded-lg tw-shadow-xl">
+                        <div class="text-center">
+                            <h3 class="tw-text-white tw-font-bold fs-3 tw-my-2">Tính năng nổi bật</h3>
+                            <img src="{{product && product.img}}" alt="" class="tw-w-48 m-auto tw-rounded-lg">
+                        </div>
+                        <div class="tw-mx-2 tw-font-bold">
+                            <ul class="tw-text-white p-3 tw-list-disc">
+                                <li>Hiệu năng vượt trội với vi xử lý mới nhất - Chip Apple A15 tiên tiến nhất, cân mọi
+                                    tác
+                                    vụ
+                                </li>
+                                <li>Tận hưởng không gian hiển thị sắc nét - Màn hình Liquid Retina nhỏ gọn 4.7 inch tỷ
+                                    lệ
+                                    16:9
+                                </li>
+                                <li>Giải trí trọn vẹn ngày dài - Viên pin có nhiều cải tiến giúp bạn không còn lo lắng
+                                    khi
+                                    sử
+                                    dụng</li>
+                                <li>Camera ghi trọn mọi khoảnh khắc - Camera đơn 12 MP f/1.8 hỗ trợ công nghệ Deep
+                                    Fusion
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <img src="https://cdn.cellphones.com.vn/media/wysiwyg/Banner/400-100-product.png" alt=""
+                        class="tw-w-full tw-rounded-2xl mt-2">
+                </div>
+                <div class="col-4">
+                  <div class="tw-flex">
+                    <div class="text-danger fs-5 tw-font-bold tw-my-4">{{product && product.price | currency:"VND"}}</div>
+                    <div class="text-dark fs-6 tw-font-bold tw-my-4 tw-line-through	ms-2">{{50000000 | currency:"VND"}}</div>
+                  </div>
+                    <div class="tw-grid tw-grid-cols-3 gap-2">
+                        <a href="" class="text-center tw-bg-white tw-border-2 tw-border-red-500 tw-rounded-2xl p-2 tw-shadow-lg">
+                            <span class="tw-font-bold "> 256GB</span><br>
+                            {{product && product.price | currency:"VND"}}
+                        </a>
+                        <a href="" class="text-center tw-bg-white hover:tw-border-rose-400 tw-border-2 tw-border-gray-200 tw-rounded-2xl p-2 tw-shadow-lg">
+                            <span class="tw-font-bold">128GB</span><br>
+                            {{product && product.price | currency:"VND"}}
+                        </a>
+                        <a href="" class="text-center tw-bg-white  tw-border-2 hover:tw-border-rose-400 tw-border-gray-200 tw-rounded-2xl p-2 tw-shadow-lg">
+                            <span class="tw-font-bold"> 64GB</span><br>
+                            {{product && product.price | currency:"VND"}}
+                        </a>
+                    </div>
+                    <div class="tw-my-4">
+                        <p class="tw-font-bold tw-text-lg">Chọn màu để xem giá và chi nhánh có hàng</p>
+                    </div>
+                    <div class="tw-grid tw-grid-cols-3 gap-2">
+                        <a href="" class="tw-flex tw-border-2 tw-bg-white hover:tw-border-rose-400 tw-border-red-500 tw-rounded-2xl p-2 tw-shadow-lg">
+                            <img src="{{product && product.img}}"  alt="" class="tw-w-12 mt-1">
+                            <span class="mt-2" style="font-size: 12px;">Vàng Đồng<br><span class="text-danger">{{product
+                                    && product.price | currency:"VND"}}</span></span>
+                        </a>
+                        <a href="" class="tw-flex tw-border-2 tw-bg-white hover:tw-border-rose-400 tw-border-gray-200 tw-rounded-2xl p-2 tw-shadow-lg">
+                            <img src="https://image.cellphones.com.vn/358x/media/catalog/product/b/l/black_final_1_3.jpg"
+                                alt="" class="tw-w-12 mt-1">
+                            <span class="mt-2" style="font-size: 12px;">Đen<br><span class="text-danger">{{product &&
+                                    product.price |
+                                    currency:"VND"}}</span></span>
+                        </a>
+                        <a href="" class="tw-flex tw-border-2 tw-bg-white hover:tw-border-rose-400 tw-border-gray-200 tw-rounded-2xl p-2 tw-shadow-lg">
+                            <img src="https://image.cellphones.com.vn/48x/media/catalog/product/s/m/sm-n985_986_galaxynote20ultra_front_pen_mysticwhite_200529.jpg"
+                                alt="" class="tw-w-12 mt-1">
+                            <span class="mt-2" style="font-size: 12px;">Trắng<br><span class="text-danger">{{product &&
+                                    product.price |
+                                    currency:"VND"}}</span></span>
+                        </a>
+                    </div>
+                    <div class="tw-my-4 tw-rounded-2xl tw-border-2 tw-border-red-200 tw-bg-white">
+                        <h2 class="tw-bg-rose-100 p-2 text-danger tw-rounded-t-2xl"><i
+                                class="fa-solid fa-gift me-2 fs-4 ms-1"></i><span class="fs-5 tw-font-bold">Khuyến
+                                Mãi</span></h2>
+                        <ul class="tw-list-decimal ms-4 p-2">
+                            <li>
+                                Thu cũ lên đời giá 1 triệu
+                            </li>
+                            <li class="tw-my-2">
+                                Trả góp 0% khi thanh toán bằng thẻ tín dụng
+                            </li>
+                            <li>
+                                Tặng phiếu bảo hành 24 tháng chỉ duy nhất cho các khách hàng mua trong ngày 13/04/2022
+                            </li>
+                        </ul>
+                        <p class="tw-bg-rose-100 p-2 m-3 tw-font-bold tw-rounded-2xl">
+                            Hotsale từ ngày <span class="text-danger">1/4 - 4/4</span> : Giảm giá chỉ còn <span
+                                class="text-danger">18.990.000đ</span> (Số lượng có hạn, không áp dụng
+                            cùng chương trình khác).
+
+                            Ngày cuối hotsale chỉ áp dụng thanh toán online 100% hoặc thanh toán trực tiếp tại cửa hàng.
+                        </p>
+                    </div>
+                    <div>
+                        <button class="btn btn-danger text-center tw-w-full tw-rounded-2xl"><span
+                                class="tw-font-bold fs-5">Mua ngay</span><br>(Giao tận nơi hoặc lấy tại của
+                            hàng)</button>
+                        <div class="tw-grid tw-grid-cols-2 gap-1 tw-my-2">
+                            <button class="btn btn-primary tw-rounded-2xl"><span class="tw-font-bold">Trả
+                                    góp</span></button>
+                            <button class="btn btn-primary text-center tw-w-full tw-rounded-2xl"><span
+                                    class="tw-font-bold">Trả góp qua thẻ</span></button>
+                        </div>
+                    </div>
+                    <div class="tw-my-4 tw-rounded-2xl tw-border-2 tw-border-gray-200 tw-bg-white">
+                        <h2 class="tw-bg-gray-300 p-2 tw-font-bold tw-rounded-t-2xl">Ưu đãi thêm</h2>
+                        <ul class="p-2">
+                            <li>
+                                <i class="fa-solid fa-circle-check text-success me-2"></i> Giảm thêm tới 1% cho thành
+                                viên
+                                Smember (áp dụng tùy sản phẩm)
+                            </li>
+                            <li class="tw-my-2">
+                                <i class="fa-solid fa-circle-check text-success me-2"></i>Giảm thêm 5% (tối đa 400k) khi
+                                thanh toán qua ví Moca cho đơn hàng từ 500k
+                            </li>
+                            <li class="tw-my-2">
+                                <i class="fa-solid fa-circle-check text-success me-2"></i>Giảm thêm 500k khi thanh toán
+                                qua
+                                ví thẻ tín dụng VP Bank cho đơn hàng từ 10 triệu
+                            </li>
+                            <li class="tw-my-2">
+                                <i class="fa-solid fa-circle-check text-success me-2"></i>Thu cũ đổi mới: Giá thu cao -
+                                Thủ
+                                tục nhanh chóng - Trợ giá tốt nhất
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-4">
+                    <div class=" tw-border-2 tw-border-gray-200 tw-rounded-2xl tw-bg-white">
+                        <h4 class="ps-3 pb-2 mt-2 tw-font-bold fs-6 tw-my-2 tw-border-b-2">Thông tin máy
+                        </h4>
+                        <ul class="tw-px-3 tw-px-2 tw-py-1">
+                            <li class=""><i class="fa-solid fa-mobile-screen me-2"></i>Mới, đầy đủ phụ kiện từ nhà sản
+                                xuất
+                            </li>
+                            <li class="tw-my-3"><i class="fa-solid fa-box me-2"></i>Redmi Note 11 Pro 5G, Sạc Xiaomi
+                                67W,
+                                Cáp USB Type-C, Công cụ đẩy SIM, Ốp lưng, Thẻ bảo hành, sách HDSD
+                            </li>
+                            <li class=""> <i class="fa-solid fa-shield me-2"></i>Bảo hành 18 tháng tại trung tâm bảo
+                                hành
+                                Chính hãng. 1 đổi 1 trong 30 ngày nếu có lỗi phần cứng từ nhà sản xuất.<span
+                                    class="text-danger">(xem chi tiết)</span>
+                            </li>
+                        </ul>
+                    </div>
+                    <a href=""> <img src="https://cdn.cellphones.com.vn/media/ltsoft/promotion/Right_banner_airpod.png"
+                            alt="" class="tw-rounded-2xl tw-shadow-xl tw-my-2"></a>
+                    <a href=""> <img src="https://cdn.cellphones.com.vn/media/ltsoft/promotion/690-300-RIGHT.jpg" alt=""
+                            class="tw-rounded-2xl tw-shadow-xl"></a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="col-12 tw-my-3">
+        <div class="row">
+            <app-phu-kien></app-phu-kien>
+        </div>
+    </div>
+    <div class="col-12">
+        <div class="row">
+            <div class="col-8 m-auto">
+                <div class="row">
+                    <div class="col-8">
+                        <div class="p-4 tw-shadow-lg tw-rounded-2xl tw-border-2 tw-border-gray-200 tw-bg-white">
+                            <div class="tw-bg-zinc-100 p-3 tw-rounded-lg ">
+                                <h5 class="text-center text-danger fs-5" style="font-weight: bold;">ĐẶC ĐIỂM NỔI BẬT
+                                </h5>
+                                <ul class="tw-list-disc ms-4 tw-text-lg">
+                                    <li>Hiệu năng vượt trội - Chip Apple A15 Bionic mạnh mẽ, hỗ trợ mạng 5G tốc độ cao
+                                    </li>
+                                    <li>Không gian hiển thị sống động - Màn hình 6.7" Super Retina XDR độ sáng cao, sắc
+                                        nét
+                                    </li>
+                                    <li>Trải nghiệm điện ảnh đỉnh cao - Cụm 3 camera 12MP, hỗ trợ ổn định hình ảnh quang
+                                        học
+                                    </li>
+                                    <li>Tối ưu điện năng - Sạc nhanh 20 W, đầy 50% pin trong khoảng 30 phút
+                                    </li>
+                                </ul>
+                            </div>
+                            <p class="tw-text-lg mt-3">
+                                <span class="text-danger tw-font-bold me-2">iPhone 13 Pro Max</span> <span class="tw-font-bold">256GB</span> được đánh giá là một trong những dòng
+                                iPhone có khả năng chụp
+                                ảnh siêu ấn tượng cùng với camera góc siêu rộng mang đến khả năng chụp ảnh thiếu sáng
+                                một cách đặc biệt. Không những thế, mà dòng iPhone này còn được đánh giá là có dung
+                                lượng bộ nhớ tốt, đáp ứng được đầy đủ các công việc hằng ngày
+                                Xem thêm thông tin iPhone 13 Pro Max 512GB thiết kế đẳng cấp, mang lại trải nghiệm vượt
+                                trội cho người dùng
+                            </p>
+                        </div>
+                        <div class="tw-shadow-xl tw-rounded-2xl mt-3 tw-border-2 tw-border-gray-200 tw-bg-white">
+                            <h4 class="p-3 fs-5 tw-font-bold">Đánh giá & nhận xét Tecno Spark 8C - Hồ Chí Minh
+                            </h4>
+                            <div class="row tw-rounded-2xl tw-mx-3">
+                                <div class="col-3 text-center tw-border-2 tw-border-gray-200 tw-rounded-l-2xl">
+                                    <h5 class="mt-5"><span class="tw-font-bold fs-5">4/5</span><br>
+                                        <p class="fs-6">
+                                            <i class="fa-solid fa-star text-warning"></i><i
+                                                class="fa-solid fa-star text-warning"></i><i
+                                                class="fa-solid fa-star text-warning"></i><i
+                                                class="fa-solid fa-star text-warning"></i><i
+                                                class="fa-solid fa-star"></i>
+                                        </p><br>12 đánh giá & nhận xét
+                                    </h5>
+                                </div>
+                                <div class="col-9 tw-border-2 tw-border-gray-200 tw-rounded-r-2xl tw-py-4">
+                                    <div class="row p-0">
+                                        <div class="col-12">
+                                            <div class="row">
+                                                <div class="col-2">
+                                                    <p class="tw-font-bold">5 <i
+                                                            class="fa-solid fa-star text-warning"></i></p>
+                                                </div>
+                                                <div class="col-8 pt-1">
+                                                    <div class="progress">
+                                                        <div class="progress-bar" role="progressbar" style="width: 75%"
+                                                            aria-valuenow="25" aria-valuemin="0" aria-valuemax="100">
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="col-2">
+                                                    <p> 4 đánh giá</p>
+                                                </div>
+                                            </div>
+                                            <div class="row tw-my-4">
+                                                <div class="col-2">
+                                                    <p class="tw-font-bold">4 <i
+                                                            class="fa-solid fa-star text-warning"></i></p>
+                                                </div>
+                                                <div class="col-8 pt-1">
+                                                    <div class="progress">
+                                                        <div class="progress-bar" role="progressbar" style="width: 15%;"
+                                                            aria-valuenow="15" aria-valuemin="0" aria-valuemax="100">
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="col-2">
+                                                    <p> 5 đánh giá</p>
+                                                </div>
+                                            </div>
+                                            <div class="row">
+                                                <div class="col-2">
+                                                    <p class="tw-font-bold">3 <i
+                                                            class="fa-solid fa-star text-warning"></i></p>
+                                                </div>
+                                                <div class="col-8 pt-1">
+                                                    <div class="progress">
+                                                        <div class="progress-bar" style="width: 10%;" role="progressbar"
+                                                            aria-valuenow="0" aria-valuemin="10" aria-valuemax="100">
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="col-2">
+                                                    <p> 3 đánh giá</p>
+                                                </div>
+                                            </div>
+                                            <div class="row tw-my-4">
+                                                <div class="col-2">
+                                                    <p class="tw-font-bold">2 <i
+                                                            class="fa-solid fa-star text-warning"></i></p>
+                                                </div>
+                                                <div class="col-8 pt-1">
+                                                    <div class="progress">
+                                                        <div class="progress-bar" role="progressbar" aria-valuenow="0"
+                                                            aria-valuemin="0" aria-valuemax="100"></div>
+                                                    </div>
+                                                </div>
+                                                <div class="col-2">
+                                                    <p> 0 đánh giá</p>
+                                                </div>
+                                            </div>
+                                            <div class="row">
+                                                <div class="col-2">
+                                                    <p class="tw-font-bold">1 <i
+                                                            class="fa-solid fa-star text-warning"></i></p>
+                                                </div>
+                                                <div class="col-8 pt-1">
+                                                    <div class="progress">
+                                                        <div class="progress-bar" role="progressbar" aria-valuenow="0"
+                                                            aria-valuemin="0" aria-valuemax="100"></div>
+                                                    </div>
+                                                </div>
+                                                <div class="col-2">
+                                                    <p> 0 đánh giá</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </div>
+                            <div class="col-12 text-center tw-my-2">
+                                <h5 class="fs-5 tw-font-bold tw-my-3">Bạn đánh giá sao về sản phẩm ?</h5>
+                                <button class="btn btn-danger tw-rounded-2xl tw-w-72 tw-font-bold">Đánh giá
+                                    ngay</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-4">
+                        <div class="tw-rounded-2xl tw-shadow-xl p-3 tw-bg-white">
+                            <h4 class="fs-5">Thông số kỹ thuật
+                            </h4>
+                            <table class="table table-striped tw-rounded-2xl">
+                                <tbody>
+                                    <tr>
+                                        <td>Kích thước màn hình </td>
+                                        <td>6.7 inches
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>Công nghệ màn hình </td>
+                                        <td>OLED
+
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>Camera sau </td>
+                                        <td>Camera góc rộng: 12MP, ƒ/1.5
+                                            Camera góc siêu rộng: 12MP, ƒ/1.8
+                                            Camera tele : 12MP, /2.8
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>Camera trước </td>
+                                        <td>12MP, ƒ/2.2
+
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>Chipset </td>
+                                        <td>Apple A15
+
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>Dung lượng RAM </td>
+                                        <td>6 GB
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>Bộ nhớ trong </td>
+                                        <td> 256 GB
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>Pin </td>
+                                        <td>4,325mAh
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>Thẻ SIM </td>
+                                        <td>2 SIM (nano‑SIM và eSIM)
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>Hệ điều hành </td>
+                                        <td>iOS15
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>Độ phân giải màn hình </td>
+                                        <td> 2778 x 1284 pixel
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>Trọng lượng </td>
+                                        <td> 240g
+
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>Bluetooth </td>
+                                        <td> v5.0
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                            <div class="text-center">
+                                <button
+                                    class="btn tw-bg-white tw-w-3/4 tw-rounded-xl tw-shadow-2xl tw-border-2 tw-border-gray-200 hover:tw-border-red-400 hover:tw-bg-rose-100 hover:tw-text-red-600">Xem
+                                    chi tiết <i class="fa-solid fa-angle-down"></i></button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

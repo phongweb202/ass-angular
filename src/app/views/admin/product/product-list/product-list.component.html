@@ -1,0 +1,102 @@
+<div class="row tw-p-6">
+
+    <h3 class="mb-4 tw-block tw-text-xl">{{title}}</h3>
+    <div class="tw-bg-white tw-shadow-2xl pt-2">
+        <button class="btn btn-success" (click)="selectAll()">Chọn tất cả</button>
+        <button class="btn btn-warning ms-2">Xóa các mục đã chọn</button>
+        <button class="btn btn-info ms-2" (click)="removeSelectAll()">Bỏ chọn tất cả</button>
+        <div class="input-group mb-3 mt-4">
+            <div class="col-2">
+                <select class="form-select" aria-label="Default select example" (change)="filter($event)">
+                    <option value="0">Bỏ lọc</option>
+                    <option value="1">Giá từ cao xuống thấp</option>
+                    <option value="2">Giá từ thấp lên cao</option>
+                    <option value="3">Sản phẩm đang được hiển thị</option>
+                </select>
+            </div>
+            <div class="col-10">
+                <input type="text" class="form-control" placeholder="Bạn muốn tìm gì ?"
+                    aria-label="Example text with button addon" aria-describedby="button-addon1" (input)="searchProduct($event)">
+            </div>
+        </div>
+        <table class="table text-center">
+            <thead>
+                <tr>
+                    <th></th>
+                    <th scope="col"><i class="fa-solid fa-image tw-text-xl"></i></th>
+                    <th scope="col">Name</th>
+                    <th scope="col">Price</th>
+                    <th scope="col">ID</th>
+                    <th scope="col">Status</th>
+                    <th></th>
+                    <th scope="col"><a routerLink="create" class="btn btn-primary">ADD PHONE</a></th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let p of arrProduct[page]">
+                    <td>
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" value="" [checked]="check">
+                        </div>
+                    </td>
+                    <td><img [src]="p.img" alt="" class="tw-h-24 tw-m-auto"></td>
+                    <td>{{p.name}}</td>
+                    <td>{{p.price | currency:'VND'}}</td>
+                    <th scope="row">PRO-{{p.id}}</th>
+                    <td><i [ngClass]="p.status == 0 ? class : 'fa-solid fa-circle text-danger'"></i></td>
+                    <td>
+                        <app-product-status [status]="p.status" (changeStatus)="parentChangeStatus($event,p.id)"></app-product-status>
+                    </td>
+                    <td>
+                        <a [routerLink]="[p.id]" class="btn btn-info me-2"><i class="fa-solid fa-eye"></i></a>
+                        <a [routerLink]="[p.id,'edit']" class="btn btn-warning me-2"><i
+                                class="fa-solid fa-pen-to-square"></i></a>
+                        <button class="btn btn-danger" (click)="setID(p.id)" data-bs-toggle="modal" data-bs-target="#exampleModal"><i class="fa-solid fa-trash"></i></button>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <div class="tw-float-right mb-2">
+            <span><i class="fa-solid fa-circle text-success"></i>
+                <label for="" class="tw-font-bold ms-1">Hiển thị</label></span>
+            <span class="tw-mx-4"> <i class="fa-solid fa-circle text-danger"></i>
+                <label for="" class="tw-font-bold ms-1">Ẩn</label></span>
+        </div>
+    </div>
+    <div class="mt-4">
+        <nav aria-label="Page navigation example">
+            <ul class="pagination">
+              <li class="page-item">
+                <button class="page-link" (click)="lastPage()">
+                    Trang trước
+                </button>
+              </li>
+              <li [ngClass]="page == i ? 'page-item active': 'page-item'"  *ngFor="let p of arrProduct;index as i"><button class="page-link" (click)="setPage(i)">{{i + 1}}</button></li>
+              <li class="page-item">
+                <button class="page-link" (click)="nextPage()">
+                    Trang sau
+                </button>
+              </li>
+            </ul>
+          </nav>
+    </div>
+
+
+</div>
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">Nhắc nhở</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close" ></button>
+        </div>
+        <div class="modal-body">
+         Bạn có chắc muốn xóa sản phẩm này ?
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn text-light" style="background-color: #6c757d;" data-bs-dismiss="modal">Hủy</button>
+          <button type="button" class="btn text-light" data-bs-dismiss="modal" (click)="remove(idChoXoa)" style="background-color: #0d6efd;">Đồng ý</button>
+        </div>
+      </div>
+    </div>
+  </div>

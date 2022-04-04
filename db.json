@@ -1,0 +1,108 @@
+{
+  "phones": [
+    {
+      "id": 1,
+      "name": "Điện thoại Samsung Galaxy S22 Ultra 5G 256GB",
+      "price": 33990000,
+      "desc": "Phiếu mua hàng Samsung 2,000,000đ",
+      "img": "http://res.cloudinary.com/web16303/image/upload/v1648966919/web16303/mffyydwysigomgzd4kis.jpg",
+      "status": 0
+    },
+    {
+      "id": 2,
+      "name": "Điện thoại iPhone 11 64GB",
+      "price": 33990000,
+      "desc": "Phiếu mua hàng Samsung 2,000,000đ",
+      "img": "https://cdn.tgdd.vn/Products/Images/42/153856/iphone-xi-do-600x600.jpg",
+      "status": 0
+    },
+    {
+      "id": 3,
+      "name": "Điện thoại OPPO Reno7 Z 5G",
+      "price": 33990000,
+      "desc": "Phiếu mua hàng Samsung 2,000,000đ",
+      "img": "https://cdn.tgdd.vn/Products/Images/42/271717/oppo-reno7-z-5g-thumb-1-1-600x600.jpg",
+      "status": 0
+    },
+    {
+      "id": 4,
+      "name": "Điện thoại iPhone 13 Pro Max 256GB",
+      "price": 33990000,
+      "desc": "Phiếu mua hàng Samsung 2,000,000đ",
+      "img": "https://cdn.tgdd.vn/Products/Images/42/250261/iphone-13-pro-max-gold-1-600x600.jpg",
+      "status": 0
+    },
+    {
+      "id": 5,
+      "name": "Điện thoại iPhone 13 Pro Max 256GB",
+      "price": 33990000,
+      "desc": "Phiếu mua hàng Samsung 2,000,000đ",
+      "img": "https://cdn.tgdd.vn/Products/Images/42/261888/realme-c35-thumb-new-600x600.jpg",
+      "status": 0
+    },
+    {
+      "id": 6,
+      "name": "Điện thoại iPhone 13 Pro Max 256GB",
+      "price": 33990000,
+      "desc": "Phiếu mua hàng Samsung 2,000,000đ",
+      "img": "https://cdn.tgdd.vn/Products/Images/42/234621/Xiaomi-12-xam-thumb-mau-600x600.jpg",
+      "status": 0
+    },
+    {
+      "id": 7,
+      "name": "Điện thoại iPhone 13 Pro Max 256GB",
+      "price": 33990000,
+      "desc": "Phiếu mua hàng Samsung 2,000,000đ",
+      "img": "https://cdn.tgdd.vn/Products/Images/42/267871/xiaomi-redmi-note-11s-trang-thumb-600x600.jpg",
+      "status": 0
+    },
+    {
+      "id": 8,
+      "name": "Điện thoại iPhone 13 Pro Max 256GB",
+      "price": 3990000,
+      "desc": "Phiếu mua hàng Samsung 2,000,000đ",
+      "img": "https://cdn.tgdd.vn/Products/Images/42/259972/Vivo-y15A-trang-xanh-600x600.jpg",
+      "status": 0
+    },
+    {
+      "id": 9,
+      "name": "Điện thoại iPhone 13 Pro Max 256GB",
+      "price": 3399000,
+      "desc": "Phiếu mua hàng Samsung 2,000,000đ",
+      "img": "https://cdn.tgdd.vn/Products/Images/42/274359/samsung-galaxy-a23-xanh-thumb-600x600.jpg",
+      "status": 0
+    },
+    {
+      "id": 10,
+      "name": "Điện thoại iPhone 13 Pro Max 256GB",
+      "price": 3990000,
+      "desc": "Phiếu mua hàng Samsung 2,000,000đ",
+      "img": "https://cdn.tgdd.vn/Products/Images/42/259972/Vivo-y15A-trang-xanh-600x600.jpg",
+      "status": 1
+    },
+    {
+      "id": 11,
+      "name": "Điện thoại iPhone 13 Pro Max 256GB",
+      "price": 33990000,
+      "desc": "Phiếu mua hàng Samsung 2,000,000đ",
+      "img": "https://cdn.tgdd.vn/Products/Images/42/274152/iphone-13-pro-xanh-la-thumb-600x600.jpg",
+      "status": 1
+    },
+    {
+      "name": "Điện thoại OPPO Reno7 Z 5G\t",
+      "price": 150000000,
+      "desc": "Sản phẩm mới thêm",
+      "img": "http://res.cloudinary.com/web16303/image/upload/v1648970347/web16303/axhsetscpqatwfyxkbj1.jpg",
+      "status": 1,
+      "id": 12
+    },
+    {
+      "name": "Điện thoại Xiaomi Redmi 10C 64GB",
+      "price": 3290000,
+      "desc": "Xiaomi Redmi 10C ra mắt với một cấu hình mạnh mẽ nhờ trang bị con chip 6 nm đến từ Qualcomm, màn hình hiển thị đẹp mắt, pin đáp ứng nhu cầu sử dụng cả ngày, hứa hẹn mang đến trải nghiệm tuyệt vời so với mức giá mà nó trang bị.",
+      "img": "http://res.cloudinary.com/web16303/image/upload/v1648973557/web16303/ybtomlv1goyxoowxb6ak.jpg",
+      "status": 1,
+      "id": 13
+    }
+  ]
+}

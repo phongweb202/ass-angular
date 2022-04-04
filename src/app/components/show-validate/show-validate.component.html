@@ -1,0 +1,11 @@
+<div class="text-danger tw-my-3 fs-6" *ngIf="formData?.dirty">
+    <p *ngIf="formData?.errors?.['required']">
+        {{key}} không được để trống 
+    </p>
+    <p *ngIf="formData?.errors?.['min']">
+        {{key}} phải lớn hơn  {{formData?.errors?.['min'].min}}
+    </p>
+    <p *ngIf="formData?.errors?.['minlength']">
+        {{key}} phải dài hơn {{formData?.errors?.['minlength'].requiredLength}} ký tự
+    </p>
+</div>

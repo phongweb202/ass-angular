@@ -1,0 +1,14 @@
+@keyframes doiMau {
+   from{
+       color: black;
+   }
+   to{
+       color: yellow;
+   }
+}
+#tieuDe{
+    animation-name: doiMau;
+    animation-duration: 2s;
+    animation-timing-function: ease-in-out;
+    animation-iteration-count: infinite;
+}

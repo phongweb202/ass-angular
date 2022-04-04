@@ -1,0 +1,40 @@
+<div class="row bg-dark p-2">
+    <div class="col-6">
+        <div class="row p-0">
+            <div class="col-3 p-2">
+                <a routerLink="" class="text-warning tw-font-bold tw-text-2xl tw-block ms-3"> <i
+                        class="fa-solid fa-shop me-1"></i>POLY SHOP</a>
+            </div>
+            <div class="col-9">
+                <div class="tw-flex tw-bg-white p-1 my-2 tw-rounded-lg tw-shadow-2xl">
+                    <i class="fa-solid fa-magnifying-glass m-1"></i>
+                    <input type="text" class="tw-outline-white tw-h-full tw-w-full tw-rounded-lg p-1"
+                        placeholder="Bạn muốn tìm gì ?">
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="col-4">
+        <div class="row p-0">
+            <div class="col-4 text-center">
+                <a href="" class="ms-1 hover:tw-text-white text-warning">
+                    <i class="fa-solid fa-phone tw-text-2xl text-light"></i><br>
+                    <span class="tw-font-bold">Gọi mua hàng 1800.2097</span></a>
+            </div>
+            <div class="col-4 text-center">
+                <a href="" class="ms-1 hover:tw-text-white text-warning">
+                    <i class="fa-solid fa-location-dot tw-text-2xl  text-light"></i><br>
+                    <span class="tw-font-bold">Chương Mỹ, Hà Tây</span></a>
+            </div>
+            <div class="col-4 text-center">
+                <a href="" class="ms-1 hover:tw-text-white text-warning">
+                    <i class="fa-solid fa-truck-fast tw-text-2xl mt-1 text-light"></i><br>
+                    <span class="tw-font-bold">Giao hàng mọi nơi</span></a>
+            </div>
+        </div>
+    </div>
+    <div class="col-2 pt-1">
+        <button (click)="router.navigate(['/login'])" class="btn btn-warning"><i class="fa-solid fa-arrow-right-to-bracket me-1"></i><span>Đăng nhập</span></button>
+        <button class="btn btn-primary ms-2"><i class="fa-solid fa-user-plus me-1"></i><span>Đăng ký</span></button>
+    </div>
+</div>

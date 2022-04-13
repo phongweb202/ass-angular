@@ -1,0 +1,39 @@
+<div class="row tw-bg-gradient-to-r tw-from-purple-500 tw-to-pink-500" style="min-height: 935px;max-width:100%;">
+    <div class=" col-6 m-auto tw-bg-white tw-shadow-2xl p-5 tw-rounded-2xl">
+        <div class="tw-grid tw-grid-cols-2">
+            <div class="">
+                <img src="https://www.pavilionweb.com/wp-content/uploads/2017/03/man-300x300.png" alt="">
+            </div>
+            <div class="">
+                <h4 class="text-center fs-3 tw-font-bold tw-my-4">Đăng Nhập</h4>
+                <form action="" [formGroup]="formDangNhap" (submit)="onSubmit(formDangNhap.value)">
+                    <div
+                    [ngClass]="formDangNhap.get('email')?.errors && formDangNhap.get('email')?.dirty ? class[1] : class[0]"
+                    >
+                        <i class="fa-solid fa-envelope fs-5 mt-3 ms-3 me-2"></i>
+                        <input type="email" formControlName="email" formControlname="email"
+                            class="tw-block p-3 tw-w-full tw-outline-none tw-bg-gray-100 tw-rounded-r-2xl">
+                    </div>
+                    <app-show-validate [form]="formDangNhap.get('email')" key="Email"></app-show-validate>
+                    <div
+                    [ngClass]="formDangNhap.get('password')?.errors && formDangNhap.get('password')?.dirty ? class[1] : class[0]">
+                        <i class="fa-solid fa-lock fs-5 mt-3 ms-3 me-2"></i>
+                        <input type="password" formControlName="password" formControlname="password"
+                            class="tw-block p-3 tw-w-full tw-outline-none  tw-bg-gray-100 tw-rounded-r-2xl"
+                            placeholder="Mật khẩu">
+                    </div>
+                    <app-show-validate [form]="formDangNhap.get('password')" key="Mật khẩu"></app-show-validate>
+                    <div class="mt-4">
+                        <button class="btn btn-success tw-block tw-w-full p-2 tw-rounded-3xl" [disabled]="formDangNhap.invalid">Đăng Nhập</button>
+                        <button type="button" style="background-color: #0d6efd;" 
+                            class="tw-text-white btn tw-my-3 tw-block tw-w-full p-2 tw-rounded-3xl hover:tw-text-white"
+                            (click)="loginGoogle()"><i class="fa-brands fa-google me-2"></i>Đăng ký bằng tài khoản
+                            Google</button>
+                        <button class="fs-5 tw-block text-center mt-3 m-auto"  (click)="route.navigate(['/'])">Quay lại
+                            trang chủ</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,35 @@
+<div class="row tw-bg-gradient-to-r tw-from-purple-500 tw-to-pink-500" style="min-height: 935px;max-width:100%;">
+    <div  class=" col-6 m-auto tw-bg-white tw-shadow-2xl p-5 tw-rounded-2xl">
+        <div class="tw-grid tw-grid-cols-2">
+            <div class="">
+                <img src="https://www.pavilionweb.com/wp-content/uploads/2017/03/man-300x300.png" alt="">
+            </div>
+            <div class="">
+                <h4 class="text-center fs-3 tw-font-bold tw-my-4">Đăng Ký</h4>
+                <form action="" [formGroup]="formDangKy" (submit)="onSubmit(formDangKy.value)">
+                    <div class="form-group tw-flex tw-rounded-2xl tw-shadow-lg tw-bg-gray-300 tw-border-2 tw-border-gray-200">
+                        <i class="fa-solid fa-envelope fs-5 mt-3 ms-3 me-2"></i>
+                        <input type="email" [value]="data.email" disabled class="tw-block p-3 tw-w-full tw-outline-none tw-bg-gray-300 tw-rounded-r-2xl">
+                    </div>
+                    <div [ngClass]="formDangKy.get('password')?.errors && formDangKy.get('password')?.dirty ? class[1] : class[0]">
+                        <i class="fa-solid fa-lock fs-5 mt-3 ms-3 me-2"></i>
+                        <input type="password" formControlName="password" class="tw-block p-3 tw-w-full tw-outline-none  tw-bg-gray-100 tw-rounded-r-2xl" placeholder="Mật khẩu">
+                    </div>
+                    <app-show-validate [form]="formDangKy.get('password')" key="Mật khẩu"></app-show-validate>
+
+                    <div [ngClass]="formDangKy.get('re-password')?.errors && formDangKy.get('re-password')?.dirty || !isEqualPassword ? class[1] : class[0]">
+                        <i class="fa-solid fa-key fs-5 mt-3 ms-3 me-2"></i>
+                        <input type="password" formControlName="re-password" (input)="check($event)" class="tw-block p-3 tw-w-full tw-outline-none  tw-bg-gray-100 tw-rounded-r-2xl" placeholder="Xác nhận Mật khẩu">
+                    </div>
+                    <app-show-validate [form]="formDangKy.get('re-password')" key="Xác nhận mật khẩu"></app-show-validate>
+                    <p *ngIf="!isEqualPassword" class="tw-block text-danger fs-6">Xác nhận mật khẩu không chính xác</p>
+                    <div class="mt-4">
+                        <button class="btn btn-success tw-block tw-w-full p-2 tw-rounded-3xl" [disabled]="formDangKy.invalid">Submit</button>
+                    </div>
+                    <p class="text-center mt-2 text-danger">Thông tin này sẽ được dùng cho lần đăng nhập tiếp theo</p>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+

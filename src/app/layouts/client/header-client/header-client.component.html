@@ -34,7 +34,18 @@
         </div>
     </div>
     <div class="col-2 pt-1">
-        <button (click)="router.navigate(['/login'])" class="btn btn-warning"><i class="fa-solid fa-arrow-right-to-bracket me-1"></i><span>Đăng nhập</span></button>
-        <button class="btn btn-primary ms-2"><i class="fa-solid fa-user-plus me-1"></i><span>Đăng ký</span></button>
+        <button (click)="router.navigate(['/login'])" *ngIf="!isLoggedIn" class="btn text-light"><i
+                class="fa-solid fa-user me-2"></i>Đăng nhập</button>
+        <div *ngIf="isLoggedIn" class="text-light tw-flex pt-2">
+            <button id="dropdownMenuButton1" data-bs-toggle="dropdown"
+            aria-expanded="false"><img [src]="logginInUser.avatar" alt=""  class="tw-w-8 tw-rounded-full me-2
+                "></button>
+            <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+                <li><button class="dropdown-item" (click)="logout()">Đăng xuất</button></li>
+            </ul>
+            <span class="mt-2"> {{logginInUser.name}}</span>
+            <a class="tw-mx-4 mt-1 fs-4 tw-scale-75 hover:tw-text-white hover:tw-scale-100 tw-transition tw-duration-150 tw-ease-out md:tw-ease-in"  
+               ><i class="fa-solid fa-cart-shopping"></i></a>
+        </div>
     </div>
 </div>

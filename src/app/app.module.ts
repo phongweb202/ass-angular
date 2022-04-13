@@ -12,7 +12,6 @@ import { ProductListComponent } from './views/admin/product/product-list/product
 import { ProductFormComponent } from './views/admin/product/product-form/product-form.component';
 import { HttpClientModule } from '@angular/common/http';
 import { ReactiveFormsModule } from '@angular/forms';
-import { ProductService } from './services/product.service';
 import { ProductDetailComponent } from './views/admin/product/product-detail/product-detail.component';
 import { ProductStatusComponent } from './components/product-status/product-status.component';
 import { LayoutClientComponent } from './layouts/client/layout-client/layout-client.component';
@@ -27,8 +26,16 @@ import { PhuKienComponent } from './views/client/phu-kien/phu-kien.component';
 import { ShowValidateComponent } from './components/show-validate/show-validate.component';
 import { ToastrModule } from 'ngx-toastr';
 import { FooterAdminComponent } from './layouts/admin/footer-admin/footer-admin.component';
-import { LoginComponent } from './layouts/login/login/login.component';
-
+import { SocialLoginModule, SocialAuthServiceConfig } from 'angularx-social-login';
+import { LoginComponent } from './views/login/login/login.component';
+import {
+  GoogleLoginProvider,
+  FacebookLoginProvider
+} from 'angularx-social-login';
+import { environment } from 'src/environments/environment';
+import { RegisterComponent } from './views/login/register/register.component';
+import { ListCategoryComponent } from './views/admin/category/list-category/list-category.component';
+import { FormCategoryComponent } from './views/admin/category/form-category/form-category.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -50,8 +57,10 @@ import { LoginComponent } from './layouts/login/login/login.component';
     PhuKienComponent,
     ShowValidateComponent,
     FooterAdminComponent,
+    RegisterComponent,
     LoginComponent,
-
+    ListCategoryComponent,
+    FormCategoryComponent,
   ],
   imports: [
     BrowserModule,
@@ -60,9 +69,23 @@ import { LoginComponent } from './layouts/login/login/login.component';
     HttpClientModule,
     ReactiveFormsModule,
     BrowserAnimationsModule,
-    ToastrModule.forRoot()
+    ToastrModule.forRoot(),
+    SocialLoginModule
   ],
-  providers: [ProductService],
+  providers: [
+    {
+      provide: 'SocialAuthServiceConfig',
+      useValue: {
+        autoLogin: false,
+        providers: [
+          {
+            id: GoogleLoginProvider.PROVIDER_ID,
+            provider: new GoogleLoginProvider(environment.GOOGLE_CLIENT_ID)
+          }
+        ]
+      } as SocialAuthServiceConfig
+    }
+  ],
   bootstrap: [AppComponent]
 
 })

@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { ProductService } from 'src/app/services/product.service';
 
 @Component({
@@ -9,7 +9,7 @@ import { ProductService } from 'src/app/services/product.service';
 })
 export class ViewProductComponent implements OnInit {
   id: any;
-  constructor(private activeRoute: ActivatedRoute, private ps: ProductService) { }
+  constructor(private activeRoute: ActivatedRoute, private ps: ProductService,private router:Router) { }
   product: any;
 
   ngOnInit(): void {
@@ -17,7 +17,12 @@ export class ViewProductComponent implements OnInit {
     this.id = this.activeRoute.snapshot.params['id'];
     if (this.id) {
       this.ps.getProduct(this.id).subscribe(data => {
+       if(data.status === 1){
+        this.router.navigate(["/"]);
+        return;
+       }else{
         this.product = data;
+       }
       });
 
     }

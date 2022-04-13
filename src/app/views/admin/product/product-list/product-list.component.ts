@@ -55,7 +55,10 @@ export class ProductListComponent implements OnInit {
       this.products = data;
       this.arr = data;
       if (this.products) {
-        this.pagination(this.products);
+        let duLieu = this.products.sort(function (s1: any, s2: any) {
+          return s2.id - s1.id
+        })
+        this.pagination(duLieu);
       }
     });
 
@@ -74,7 +77,6 @@ export class ProductListComponent implements OnInit {
     }
   }
   lastPage() {
-
     this.page = this.page - 1;
     if (this.page < 0) {
       this.page = this.arrProduct.length - 1;
@@ -120,7 +122,11 @@ export class ProductListComponent implements OnInit {
     }
     else if (this.yeuCau == 3) {
       this.arr = data.filter((item: any) => item.status == 0);
-    } else {
+    }
+    else if (this.yeuCau == 4) {
+      this.arr = data.filter((item: any) => item.status == 1);
+    }
+    else {
       this.ngOnInit();
       return;
     }
@@ -142,7 +148,9 @@ export class ProductListComponent implements OnInit {
       return nameProduct.includes(nameNow);
     });
     this.page = 0;
-
+    if (!this.valueFilter) {
+      data = this.products;
+    }
     if (data.length === 0) {
       this.toastr.warning("Không có sản phẩm nào khớp với từ khóa bạn nhập", "Cảnh báo", {
         timeOut: 3000

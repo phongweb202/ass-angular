@@ -8,6 +8,11 @@
                     class="fa fa-bank me-2"></i>DASHBOARD</button>
         </li>
         <li>
+            <button (click)="pageCategory()"
+            [ngClass]="ele == 3 ? 'tw-block tw-px-2 tw-py-6 tw-text-xl tw-font-bold tw-border-b tw-border-white tw-mx-2 tw-text-red-400 tw-text-2xl transition tw-duration-150 tw-ease-out md:tw-ease-in' : 'tw-block tw-px-2 tw-py-6 tw-text-xl tw-font-bold tw-border-b tw-border-white tw-mx-2 hover:tw-text-red-400 hover:tw-text-2xl transition tw-duration-150 tw-ease-out md:tw-ease-in'"><i
+                    class="fa-solid fa-book me-2"></i>CATEGORY</button>
+        </li>
+        <li>
             <button (click)="pageProduct()" 
                 [ngClass]="ele == 2 ? 'tw-block tw-px-2 tw-py-6 tw-text-xl tw-font-bold tw-border-b tw-border-white tw-mx-2 tw-text-red-400 tw-text-2xl transition tw-duration-150 tw-ease-out md:tw-ease-in' : 'tw-block tw-px-2 tw-py-6 tw-text-xl tw-font-bold tw-border-b tw-border-white tw-mx-2 hover:tw-text-red-400 hover:tw-text-2xl transition tw-duration-150 tw-ease-out md:tw-ease-in'"><i
                     class="fa fa-cubes me-2"></i>PRODUCT</button>

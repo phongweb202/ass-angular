@@ -91,10 +91,18 @@
     </div>
     <div class="row">
         <div class="col-12 mt-5 tw-rounded-lg">
-            <h2 class="fs-3 tw-font-bold mb-4 text-danger tw-font-bold"><a href="">ĐIỆN THOẠI NỔI BẬT NHẤT</a></h2>
+          <div class="row">
+              <div class="col-6">
+                <h2 class="fs-3 tw-font-bold mb-4 text-danger tw-font-bold"><a href="">ĐIỆN THOẠI NỔI BẬT NHẤT</a></h2>
+              </div>
+              <div class="col-6">
+                  <button (click)="filterCate(c.id)"  *ngFor="let c of categories" class=" btn tw-bg-gray-100 tw-rounded-2xl  tw-border-2 tw-border-gray-300" >{{c.name}}</button>
+                  <button (click)="onGetList()"  class=" btn btn-danger tw-rounded-2xl ms-1" >Bỏ chọn</button>
+              </div>
+          </div>
             <div class="col-12">
                 <div class="tw-grid tw-grid-cols-5 gap-2 mb-3">
-                    <div *ngFor="let p of products"
+                    <div *ngFor="let p of products" [hidden]="p.status === 1"
                         class="tw-scale-95 p-3 tw-border-2 tw-border-gray-200 hover:tw-border-rose-200 tw-relative tw-rounded-lg bg-light  tw-shadow-md hover:tw-shadow-xl hover:tw-scale-100 transition tw-duration-150 tw-ease-out hover:tw-ease-in">
                         <a [routerLink]="[p.id]"><img src="{{p.img}}" alt=""></a>
                         <i class="fa-brands fa-hotjar tw-absolute tw-top-0 tw-left-0 fs-2 text-danger"></i>

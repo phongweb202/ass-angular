@@ -20,4 +20,8 @@ export class AsideComponent implements OnInit {
     this.ele = 2
     this.route.navigate(['admin/phones']);
   }
+  pageCategory(){
+    this.ele = 3;
+    this.route.navigate(['admin/category']);
+  }
 }

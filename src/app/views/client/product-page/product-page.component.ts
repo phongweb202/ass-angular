@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
+import { ToastrService } from 'ngx-toastr';
+import { CategoryService } from 'src/app/services/category.service';
 import { ProductService } from 'src/app/services/product.service';
 
 @Component({
@@ -8,17 +10,23 @@ import { ProductService } from 'src/app/services/product.service';
   styleUrls: ['./product-page.component.css']
 })
 export class ProductPageComponent implements OnInit {
-  products:any;
-  constructor(private route:Router,private ps:ProductService) { }
-
+  products: any;
+  constructor(private route: Router, private ps: ProductService, private cs: CategoryService,private toast:ToastrService) { }
+  categories: any;
+  arrProducts:any;
   ngOnInit(): void {
     this.onGetList();
+    this.cs.getCategories().subscribe(data => {
+      this.categories = data;
+    });
   }
-  onGetList(){
+  onGetList() {
     this.ps.getProducts().subscribe(data => {
       this.products = data;
-      console.log(this.products);
-    })
+      this.arrProducts = data;
+    });
   }
-
+  filterCate(id: number | string) {
+    this.products = this.arrProducts.filter((item:any) => item.categoryId === id);
+  }
 }

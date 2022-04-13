@@ -5,6 +5,9 @@
     <p *ngIf="formData?.errors?.['min']">
         {{key}} phải lớn hơn  {{formData?.errors?.['min'].min}}
     </p>
+    <p *ngIf="formData?.errors?.['email']">
+        {{key}} chưa đúng định dạng
+    </p>
     <p *ngIf="formData?.errors?.['minlength']">
         {{key}} phải dài hơn {{formData?.errors?.['minlength'].requiredLength}} ký tự
     </p>

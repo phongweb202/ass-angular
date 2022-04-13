@@ -17,13 +17,15 @@
             <div class="mb-3">
                 <label class="form-label">Status</label>
                 <div class="form-check">
-                    <input class="form-check-input" type="radio" value="0" disabled [checked]="product && product.status == 0">
+                    <input class="form-check-input" type="radio" value="0" disabled
+                        [checked]="product && product.status == 0">
                     <label class="form-check-label" for="flexRadioDefault1">
                         Hiển thị
                     </label>
                 </div>
                 <div class="form-check">
-                    <input class="form-check-input" type="radio" value="1" disabled [checked]="product && product.status == 1">
+                    <input class="form-check-input" type="radio" value="1" disabled
+                        [checked]="product && product.status == 1">
                     <label class="form-check-label" for="flexRadioDefault2">
                         Ẩn
                     </label>
@@ -31,12 +33,21 @@
 
             </div>
             <div class="mb-3">
+                <label class="form-label">Category</label>
+                <select class="form-select" disabled>
+                    <option value="0">{{category.name}}</option>
+                </select>
+            </div>
+            <div class="mb-3">
                 <label class="form-label">Decription</label>
                 <textarea class="form-control" disabled [value]="product && product.desc"></textarea>
             </div>
             <button type="button"
-                class="tw-bg-blue-600 tw-text-white outline-none btn hover:tw-bg-blue-800 hover:tw-text-white" (click)="cancel()">Quay lại</button>
-            <button  type="button" class="tw-bg-yellow-500 tw-text-white outline-none btn hover:tw-bg-yellow-600 hover:tw-text-white ms-2" (click)="goToEdit()">
+                class="tw-bg-blue-600 tw-text-white outline-none btn hover:tw-bg-blue-800 hover:tw-text-white"
+                (click)="cancel()">Quay lại</button>
+            <button type="button"
+                class="tw-bg-yellow-500 tw-text-white outline-none btn hover:tw-bg-yellow-600 hover:tw-text-white ms-2"
+                (click)="goToEdit()">
                 Đi đến trang cập nhật sản phẩm
             </button>
         </form>

@@ -9,8 +9,7 @@
             </div>
             <div class="mb-3">
                 <label class="form-label">Price</label>
-                <input type="number" class="form-control" formControlName="price"
-                [value]="product && product.price">
+                <input type="number" class="form-control" formControlName="price" [value]="product && product.price">
                 <app-show-validate [form]="formProduct.get('price')" key="Giá sản phẩm"></app-show-validate>
             </div>
             <div class="mb-3">
@@ -22,7 +21,7 @@
                 <label class="form-label">Status</label>
                 <div class="form-check">
                     <input class="form-check-input" type="radio" value="0" formControlName="status"
-                        [checked]="product && product.status == 0"> 
+                        [checked]="product && product.status == 0">
                     <label class="form-check-label" for="flexRadioDefault1">
                         Hiển thị
                     </label>
@@ -37,14 +36,24 @@
                 <app-show-validate [form]="formProduct.get('status')" key="Trạng thái sản phẩm"></app-show-validate>
             </div>
             <div class="mb-3">
-                <label class="form-label">Decription</label>
-                <textarea class="form-control" formControlName="desc" [value]="product && product.desc"  rows="3"
-                ></textarea>
+                <label class="form-label">Category</label>
+                <select class="form-select" formControlName="categoryId">
+                    <option value="0">Danh mục điện thoại</option>
+                    <option [value]="c.id" *ngFor="let c of categories"
+                        [selected]="c.id === formProduct.value.categoryId">{{c.name}}
+                    </option>
+                </select>
             </div>
-            <button type="submit" 
-                class="tw-bg-blue-600 tw-text-white outline-none btn hover:tw-bg-blue-800 hover:tw-text-white" [disabled]="formProduct.invalid">Submit</button>
-            
-            <button class="btn btn-warning ms-1" (click)="cancel()" >
+            <div class="mb-3">
+                <label class="form-label">Decription</label>
+                <textarea class="form-control" formControlName="desc" [value]="product && product.desc"
+                    rows="3"></textarea>
+            </div>
+            <button type="submit"
+                class="tw-bg-blue-600 tw-text-white outline-none btn hover:tw-bg-blue-800 hover:tw-text-white"
+                [disabled]="formProduct.invalid">Submit</button>
+
+            <button class="btn btn-warning ms-1" (click)="cancel()">
                 Cancel
             </button>
         </form>

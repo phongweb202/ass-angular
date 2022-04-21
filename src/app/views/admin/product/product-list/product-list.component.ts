@@ -63,12 +63,6 @@ export class ProductListComponent implements OnInit {
     });
 
   };
-  selectAll() {
-    this.check = true;
-  };
-  removeSelectAll() {
-    this.check = false;
-  };
   nextPage() {
     this.page = this.page + 1;
     if (this.page >= this.arrProduct.length) {
